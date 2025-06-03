@@ -1,7 +1,7 @@
 package entidades;
 
 public class FreePatinho implements Membresia{
-	public void TaxaMensal() {
-		
+	public double TaxaMensal() {
+		return 0.0;
 	}
 }
