@@ -15,7 +15,7 @@ EGit instalado (geralmente já vem por padrão).
 
 Vá até o repositório no GitHub.
 
-Clique em "Code" → HTTPS ou SSH (ex: https://github.com/usuario/repositorio.git).
+Copie o link do repositório: https://github.com/LucasChoucate/pooAV3
 
 2. No Eclipse:
 
