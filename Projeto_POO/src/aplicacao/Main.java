@@ -13,6 +13,7 @@ import entidades.AlunoOBI;
 import entidades.FreePatinho;
 import entidades.Membro;
 import entidades.Patinho;
+import entidades.Pessoa;
 
 public class Main {
 	public static void main(String[] args) {
@@ -26,6 +27,7 @@ public class Main {
 		LocalDate ingresso = null;
 		String curso;
 		List<String> area_atuacao = new ArrayList<>();
+		List<Pessoa> lista_pessoa = new ArrayList<>();
 
 		System.out.println("CADASTRO DE MEMBROS DO CLUBE DE PROGRAMAÇÃO");//Menu
 		System.out.println("1) Visualizar lista");
@@ -50,7 +52,7 @@ public class Main {
 			System.out.println("Selecione a opção de acordo com as aulas que você participa.");
 			System.out.println("1) Algoritmos");
 			System.out.println("2) OBI");
-			System.out.println("3) Ambas");
+			
 			
 			int opcao = sc.nextInt();
 			sc.nextLine();
@@ -62,9 +64,6 @@ public class Main {
 				algoritmos.matriculaAula(); //print dos horários de aula do algoritmos
 			}else if(opcao == 2) {	
 				obi.matriculaAula(); //print dos horários de aula da obi
-			}else if(opcao == 3) {
-				algoritmos.matriculaAula();
-				obi.matriculaAula();
 			}
 			break;
 		case 3:
@@ -142,11 +141,13 @@ public class Main {
 			escolhaChar = sc.nextLine().charAt(0);
 			
 			if(escolhaChar == 's' || escolhaChar == 'S') { //cadastro com membresia
-				Membro membro = new Membro(nome, ra, email, telefone, nascimento, ingresso, curso, new Patinho(), membro_ativo);
+				Pessoa membro = new Membro(nome, ra, email, telefone, nascimento, ingresso, curso, new Patinho(), membro_ativo);
+				lista_pessoa.add(membro);
 			}
 				
 			else if(escolhaChar == 'n' || escolhaChar == 'N') { //cadastro sem membresia
-				Membro membro = new Membro(nome, ra, email, telefone, nascimento, ingresso, curso, new FreePatinho(), membro_ativo);
+				Pessoa membro = new Membro(nome, ra, email, telefone, nascimento, ingresso, curso, new FreePatinho(), membro_ativo);
+				lista_pessoa.add(membro);
 			}
 				
 			break;
@@ -197,7 +198,7 @@ public class Main {
 			sc.nextLine();
 			
 			loop = true;
-			//adicionar área de atuação
+			//adicionar área de direção
 			System.out.println("Área de direção:");
 			String area_direcao = sc.nextLine();
 			
@@ -207,11 +208,13 @@ public class Main {
 			escolhaChar = sc.nextLine().charAt(0);
 			
 			if(escolhaChar == 's' || escolhaChar == 'S') { //cadastro com membresia
-				Administrador adm = new Administrador(nome, ra, email, telefone, nascimento, ingresso, curso, new Patinho(), area_direcao, membros);
+				Pessoa adm = new Administrador(nome, ra, email, telefone, nascimento, ingresso, curso, new Patinho(), area_direcao);
+				lista_pessoa.add(adm);
 			}
 				
 			else if(escolhaChar == 'n' || escolhaChar == 'N') { //cadastro sem membresia
-				Administrador adm = new Administrador(nome, ra, email, telefone, nascimento, ingresso, curso, new FreePatinho(), area_direcao, membros);
+				Pessoa adm = new Administrador(nome, ra, email, telefone, nascimento, ingresso, curso, new FreePatinho(), area_direcao);
+				lista_pessoa.add(adm);
 			}
 			break;
 			
