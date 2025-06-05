@@ -33,9 +33,8 @@ public class Main {
 		System.out.println("1) Visualizar lista");
 		System.out.println("2) Acessar agenda de aulas");
 		System.out.println("3) Adicionar membro");
-		System.out.println("4) Remover membro");
-		System.out.println("5) Adicionar diretor");
-		System.out.println("6) Remover diretor");
+		System.out.println("4) Adicionar diretor");
+		System.out.println("5) Remover membro/diretor");
 
 		int escolhaInt = sc.nextInt();//escolha do menu
 		sc.nextLine();
@@ -44,7 +43,15 @@ public class Main {
 		case 1: 
 			//VISUALIZAR LISTA
 			System.out.println("VISUALIZAR LISTA");
-			//for each lista; checar se está vazia
+			int i = 0;
+			for(Pessoa integrantes :  lista_pessoa){
+				if(lista_pessoa.equals(null)) { //verifica se a lista está vazia
+					System.out.println("Ainda não há membros cadastrados.");
+				} else {
+					System.out.println((i+1) + ") ");
+					System.out.println(integrantes);
+				}
+			}
 			break;
 		case 2:
 			//AGENDA DE AULAS
@@ -151,9 +158,8 @@ public class Main {
 			}
 				
 			break;
+		
 		case 4:
-			break;
-		case 5:
 			System.out.println("ADICIONAR DIRETOR");
 			
 			System.out.println("Nome:");
@@ -217,7 +223,28 @@ public class Main {
 				lista_pessoa.add(adm);
 			}
 			break;
-			
+		case 5:
+			//VISUALIZAR LISTA antes de remover 
+			System.out.println("REMOVER MEMBRO");
+			int j = 0;
+			for(Pessoa integrantes :  lista_pessoa){
+				if(lista_pessoa.equals(null)) { //verifica se a lista está vazia
+					System.out.println("Ainda não há membros cadastrados."); 
+				} else {
+					System.out.println((j+1) + ") ");
+					System.out.println(integrantes);
+				}
+			}
+			//REMOVER MEMBRO
+			System.out.println("Escolha quem deseja remover.");
+			String remove = sc.nextLine();
+			//escolher membro da lista que será removido
+			for(Pessoa integrantes :  lista_pessoa){
+				if(integrantes.getNome() == remove) {
+					lista_pessoa.remove(integrantes);
+				}
+			}
+			break;
 		}
 
 		sc.close();
