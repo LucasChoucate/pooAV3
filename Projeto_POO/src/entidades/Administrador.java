@@ -2,6 +2,8 @@ package entidades;
 
 import java.time.LocalDate;
 
+import servicos.Membresia;
+
 public abstract class Administrador {
 		private String nome;
 		private String ra;
@@ -103,8 +105,8 @@ public abstract class Administrador {
 
 	@Override
 	public String toString() {
-		return "Administrador [nome=" + nome + ", ra=" + ra + ", email=" + email + ", telefone=" + telefone + ", nascimento="
-				+ nascimento + ", ingresso=" + ingresso + ", curso=" + curso + "]";
+		return "Nome: " + nome + ", RA: " + ra + ", E-mail: " + email + ", Telefone: " + telefone + ", Nascimento: "
+				+ nascimento + ", Ingresso: " + ingresso + ", Curso: " + curso;
 	}
 
 	

@@ -3,6 +3,8 @@ package entidades;
 import java.time.LocalDate;
 import java.util.List;
 
+import servicos.Membresia;
+
 public class Diretor extends Administrador {
 	private String area_direcao;
 	
@@ -23,4 +25,12 @@ public class Diretor extends Administrador {
 	public void setArea_direcao(String area_direcao) {
 		this.area_direcao = area_direcao;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + ", Área de direção: " + area_direcao;
+	}
+	
+	
+	
 }
