@@ -1,8 +1,0 @@
-package entidades;
-
-public class AlunoOBI extends Aluno {
-	@Override
-	public String matriculaAula() {
-		return "Aulas semanais: Segunda 13:00-14:40";
-	}
-}
