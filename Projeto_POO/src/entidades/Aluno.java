@@ -1,5 +1,0 @@
-package entidades;
-
-public abstract class Aluno{
-	public abstract String matriculaAula();
-}
